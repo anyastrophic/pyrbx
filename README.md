@@ -21,11 +21,12 @@
 </p>
 
 # Overview
-Welcome to a fork of ro.py, an asynchronous, object-oriented wrapper for the Roblox web API.
+Welcome to pyrbx a fork of ro.py.
+pyrbx is an asynchronous, object-oriented wrapper for the Roblox web API.
 
-This fork intends to implement support for Roblox Cloud APIs.
+This fork main purpose is to implement support for Roblox Cloud APIs, however other features are also being added.
 
-The table below represents full support of a cloud service.
+The table below represents full support of cloud services.
 
 | Service          | Completed |
 |------------------|---|
@@ -57,4 +58,4 @@ pip install git+https://github.com/ro-py/ro.py.git
 
 # Tutorial
 Learn how to use ro.py in our docs:
-https://ro.py.jmk.gg/dev/tutorial/
+https://anyastrophic.github.io/pyrbx/dev/

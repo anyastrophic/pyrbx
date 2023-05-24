@@ -1,6 +1,6 @@
 # Get started
 
-At the beginning of every ro.py application is the client. The client represents a user's session on Roblox.
+At the beginning of every pyrbx application is the client. The client represents a user's session on Roblox.
 To initialize a client, import it from the `roblox` module:
 ```python title="main.py"
 from roblox import Client
@@ -35,7 +35,7 @@ async def main():
 asyncio.get_event_loop().run_until_complete(main())
 ```
 
-This is the basic structure of every ro.py application.
+This is the basic structure of every pyrbx application.
 Great, our code works - but it's not doing anything yet. Let's print out some information about this user by replacing
 the code in `main()` with this:
 ```python

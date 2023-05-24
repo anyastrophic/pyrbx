@@ -7,8 +7,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from .client import Client
 from enum import Enum
 
 from .bases.baseasset import BaseAsset
@@ -16,6 +14,8 @@ from .bases.basebadge import BaseBadge
 from .bases.basegamepass import BaseGamePass
 from .bases.baseinstance import BaseInstance
 
+if TYPE_CHECKING:
+    from .client import Client
 
 class InstanceType(Enum):
     """

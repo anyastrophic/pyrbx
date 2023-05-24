@@ -1,9 +1,9 @@
 # Source file: https://github.com/Elttob/Fusion/blob/main/mkdocs.yml
 
-site_name: ro.py
-site_url: https://ro.py.jmk.gg/
-repo_name: ro-py/ro.py
-repo_url: https://github.com/ro-py/ro.py
+site_name: pyrbx
+site_url: https://github.com/anyastrophic/pyrbx
+repo_name: anyastrophic/pyrbx
+repo_url: https://github.com/anyastrophic/pyrbx
 edit_uri: edit/main/docs/
 
 theme:
@@ -71,13 +71,7 @@ markdown_extensions:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ro-py/ro.py
-      name: ro.py on GitHub
-    - icon: fontawesome/brands/discord
-      link: https://discord.gg/N8yUdkSJwA
-      name: RoAPI Discord
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/jmkdev
-      name: jmkdev on Twitter
+      link: https://github.com/anyastrophic/pyrbx
+      name: pyrbx on GitHub
   version:
     provider: mike

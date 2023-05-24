@@ -7,11 +7,12 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from .client import Client
 from typing import Optional
 
 from .bases.basegamepass import BaseGamePass
+
+if TYPE_CHECKING:
+    from .client import Client
 
 
 class GamePass(BaseGamePass):

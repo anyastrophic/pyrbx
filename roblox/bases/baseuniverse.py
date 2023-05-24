@@ -20,7 +20,6 @@ if TYPE_CHECKING:
     from ..client import Client
     from ..badges import Badge
 
-
 class UniverseLiveStats:
     """
     Represents a universe's live stats.
@@ -40,7 +39,7 @@ class UniverseLiveStats:
 
 def _universe_badges_handler(client: Client, data: dict) -> Badge:
     # inline imports are used here, sorry
-    from ..badges import Badge
+    from ..badges import Badge # pylint: disable=import-outside-toplevel
     return Badge(client=client, data=data)
 
 class Datastore:
@@ -96,7 +95,7 @@ class BaseUniverse(BaseItem):
         """
 
         self._client: Client = client
-        self.id: int = universe_id
+        self.id: int = universe_id # pylint: disable=invalid-name
 
     async def get_favorite_count(self) -> int:
         """
@@ -181,7 +180,7 @@ class BaseUniverse(BaseItem):
             page_size=page_size,
             sort_order=sort_order,
             max_items=max_items,
-            handler=lambda client, data: GamePass(client, data),
+            handler=lambda client, data: GamePass(client, data), # pylint: disable=unnecessary-lambda
         )
 
     async def get_social_links(self) -> List[SocialLink]:

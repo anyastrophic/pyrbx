@@ -4,14 +4,14 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup_info = {
-    "name": "roblox",
-    "version": "2.0.0",
-    "author": "jmkdev",
-    "author_email": "jmk@jmksite.dev",
-    "description": "ro.py is a modern object-oriented asynchronous Python wrapper for the Roblox web API.",
+    "name": "pyrbx",
+    "version": "2.0.1",
+    "author": "anyastrophic",
+    "author_email": "logixism@pm.me",
+    "description": "pyrbx is a modern object-oriented asynchronous Python wrapper for the Roblox web API.",
     "long_description": long_description,
     "long_description_content_type": "text/markdown",
-    "url": "https://github.com/ro-py/ro.py",
+    "url": "https://github.com/anyastrophic/pyrbx",
     "packages": setuptools.find_packages(),
     "classifiers": [
         "Programming Language :: Python :: 3",
@@ -22,11 +22,9 @@ setup_info = {
         "Topic :: Software Development :: Libraries"
     ],
     "project_urls": {
-        "Discord": "https://discord.gg/tjRfCbDMSk",
-        "Issue Tracker": "https://github.com/ro-py/ro.py/issues",
-        "GitHub": "https://github.com/ro-py/ro.py/",
-        "Examples": "https://github.com/ro-py/ro.py/tree/main/examples",
-        "Twitter": "https://twitter.com/jmkdev"
+        "Issue Tracker": "https://github.com/anyastrophic/pyrbx/issues",
+        "GitHub": "https://github.com/anyastrophic/pyrbx/",
+        "Examples": "https://github.com/anyastrophic/pyrbx/tree/main/examples",
     },
     "python_requires": '>=3.7',
     "install_requires": [

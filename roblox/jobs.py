@@ -7,14 +7,13 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from .client import Client
-
 from typing import List
 
 from .bases.basejob import BaseJob
 from .bases.baseplace import BasePlace
-from .bases.baseuser import BaseUser
+
+if TYPE_CHECKING:
+    from .client import Client
 
 
 class GameInstancePlayerThumbnail:
@@ -37,54 +36,17 @@ class GameInstancePlayerThumbnail:
     def __repr__(self):
         return f"<{self.__class__.__name__} url={self.url!r} final={self.final}"
 
-
-class GameInstancePlayer(BaseUser):
-    """
-    Represents a single player in a game instance.
-    Data, like user ID and username, may be filled with placeholder data.
-    Do not rely on this object containing proper data. If the id attribute is 0, this object should not be used.
-    
-    Attributes:
-        id: The player's user ID.
-        name: The player's username.
-        thumbnail: The player's thumbnail.
-    """
-
-    def __init__(self, client: Client, data: dict):
-        self._client: Client = client
-        self.id: int = data["Id"]
-        super().__init__(client=self._client, user_id=self.id)
-
-        self.name: str = data["Username"]
-        self.thumbnail: GameInstancePlayerThumbnail = GameInstancePlayerThumbnail(
-            client=self._client,
-            data=data["Thumbnail"]
-        )
-
-    def __repr__(self):
-        return f"<{self.__class__.__name__} id={self.id} name={self.name!r}>"
-
-
 class GameInstance(BaseJob):
     """
     Represents a game (or place) instance, or "job".
 
     Attributes:
         id: The instance's job ID.
-        capacity: The server's capacity.
+        max_players: The amount of players the server can hold.
+        playing: The amount of players in the server.
         ping: The server's ping.
         fps: The server's FPS.
-        show_slow_game_message: Whether to show the "slow game" message.
         place: The server's place.
-        current_players: A list of the players in this server.
-        can_join: Whether the authenticated user can join this server.
-        show_shutdown_button: Whether to show the shutdown button on this server.
-        friends_description: What text should be shown if this server is a "friends are in" server.
-        friends_mouseover: What text should be shown on mouseover if this server is a "friends are in" server.
-        capacity_message: The server's capacity as a parsed message.
-        join_script: JavaScript code that, when evaluated on a /games page on the Roblox website, launches this game.
-        app_join_script: JavaScript code that, when evaluated on a /games page on the Roblox website, launches this game
-                         through the Roblox mobile app.
     """
 
     def __init__(self, client: Client, data: dict, place_id: int):

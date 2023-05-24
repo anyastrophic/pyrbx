@@ -21,7 +21,7 @@ on Roblox, including:
     We recommend using an alternate account with only the permissions it needs to limit the destruction an attacker can 
     do. [Always enable 2-step verification!](https://en.help.roblox.com/hc/articles/212459863)
 
-The best way to authenticate your ro.py application is to log in to Roblox on the website and then taking the
+The best way to authenticate your pyrbx application is to log in to Roblox on the website and then taking the
 .ROBLOSECURITY token from there.
 
 !!! warning

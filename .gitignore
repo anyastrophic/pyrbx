@@ -9,9 +9,8 @@ venv/
 build/
 dist/
 dist_old/
-ro_py.egg-info/
-jmkdev_tests/
-ro_py_old/
+pyrbx.egg-info/
+pyrbx_old/
 other/
 udocs/
 build.*

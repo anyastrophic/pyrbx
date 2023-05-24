@@ -2,7 +2,7 @@
 Certain Roblox endpoints are paginated. This means that going through their data is kind of like flipping through the
 pages of a book - you start at page 1 and then you can move forwards or backwards until you reach the start or the end.
 
-This can be annoying when all you want is "every member in a group" or "the last 10 posts on a group wall", so ro.py
+This can be annoying when all you want is "every member in a group" or "the last 10 posts on a group wall", so pyrbx
 abstracts this away into a "PageIterator" that you can use to loop over your data.
 
 As an example, the `Client.user_search()` function takes in a keyword (like "builderman") and returns a `PageIterator`

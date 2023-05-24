@@ -1,5 +1,5 @@
 # Error handling
-You can import ro.py exceptions from the `roblox.utilities.exceptions` or just from the `roblox` library:
+You can import pyrbx exceptions from the `roblox.utilities.exceptions` or just from the `roblox` library:
 ```python
 from roblox.utilities.exceptions import InternalServerError
 from roblox import InternalServerError
@@ -33,7 +33,7 @@ except UserNotFound:
 All of these exceptions are subclasses of `ItemNotFound`.
 
 ## HTTP errors
-ro.py also raises HTTP errors when Roblox says something is wrong.
+pyrbx also raises HTTP errors when Roblox says something is wrong.
 For example, if we try to shout on a group that we don't have permissions on, Roblox stops us and returns a 
 `401 Unauthorized` error:
 ```python
@@ -68,10 +68,10 @@ These are the different types of exceptions raised depending on the HTTP error R
 | 500              | `InternalServerError` |
 
 All of these exceptions are subclasses of the `HTTPException` error.
-For other unrecognized error codes, ro.py will fallback to the default `HTTPException`.
+For other unrecognized error codes, pyrbx will fallback to the default `HTTPException`.
 
 ### Getting more error information
-For all HTTP exceptions, ro.py exposes a `response` attribute so you can get the response information:
+For all HTTP exceptions, pyrbx exposes a `response` attribute so you can get the response information:
 ```python
 group = await client.get_group(1)
 try:
