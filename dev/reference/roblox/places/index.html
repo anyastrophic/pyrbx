@@ -1807,6 +1807,14 @@ Place            (<a class="autorefs autorefs-internal" title="roblox.bases.base
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&gt;&quot;</span>
 
     <span class="k">async</span> <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Publish to this place with the specified file</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file (str): path to the file</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            PublishResponse: A Publish Response</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">publish_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
             <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;universes/v1/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/places/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/versions&quot;</span><span class="p">),</span>
             <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -1953,10 +1961,53 @@ Place            (<a class="autorefs autorefs-internal" title="roblox.bases.base
 
     <div class="doc doc-contents ">
 
+      <p>Publish to this place with the specified file</p>
 
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>file</code></td>
+        <td><code>str</code></td>
+        <td><p>path to the file</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>PublishResponse</code></td>
+      <td><p>A Publish Response</p></td>
+    </tr>
+  </tbody>
+</table>
         <details class="quote">
           <summary>Source code in <code>roblox/places.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Publish to this place with the specified file</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        file (str): path to the file</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        PublishResponse: A Publish Response</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">publish_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
         <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;universes/v1/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/places/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/versions&quot;</span><span class="p">),</span>
         <span class="n">params</span><span class="o">=</span><span class="p">{</span>
@@ -2000,10 +2051,34 @@ PublishResponse        </code>
 
     <div class="doc doc-contents ">
 
+      <p>A Publish Response</p>
 
+<p><strong>Attributes:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>version_number</code></td>
+        <td><code>int</code></td>
+        <td><p>Version number received from the Roblox API</p></td>
+      </tr>
+  </tbody>
+</table>
         <details class="quote">
           <summary>Source code in <code>roblox/places.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PublishResponse</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A Publish Response</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        version_number (int): Version number received from the Roblox API</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">version_number</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;versionNumber&#39;</span><span class="p">]</span>
 </code></pre></div>
