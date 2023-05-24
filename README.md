@@ -25,8 +25,8 @@ The table below represents full support of cloud services.
 | Service          | Completed |
 |------------------|---|
 | Messaging        | ✅ |
+| Place Publishing | ✅ |
 | Data Stores      | ❌ |
-| Place Publishing | ❌ |
 | Assets           | ❌ |
 
 # Features
