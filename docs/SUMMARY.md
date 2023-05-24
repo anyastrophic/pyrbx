@@ -7,6 +7,4 @@
     * [Pagination](tutorial/pagination.md)
 * [ROBLOSECURITY](roblosecurity.md)
 * [Bases](bases.md)
-* [Extensions](extensions.md)
-* [Migrating to v2.0](migrating.md)
 * [Code Reference](reference/)
