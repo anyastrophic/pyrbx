@@ -21,7 +21,18 @@
 </p>
 
 # Overview
-Welcome to ro.py! ro.py is an asynchronous, object-oriented wrapper for the Roblox web API.
+Welcome to a fork of ro.py, an asynchronous, object-oriented wrapper for the Roblox web API.
+
+This fork intends to implement support for Roblox Cloud APIs.
+
+The table below represents full support of a cloud service.
+
+| Service          | Completed |
+|------------------|---|
+| Messaging        | ✅ |
+| Data Stores      | ❌ |
+| Place Publishing | ❌ |
+| Assets           | ❌ |
 
 # Features
 The key features are:  
