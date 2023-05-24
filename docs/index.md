@@ -17,11 +17,11 @@ The key features are:
 - **Flexible**: pyrbx's builtin Requests object allows the user to do things that we haven't already implemented
 ourselves without dealing with advanced Roblox-specific concepts.
 
-<!-- ## Installation
+## Installation
 To install pyrbx from PyPI, you can install with pip:
 ```
-pip install roblox
-``` -->
+pip install pyrbx
+```
 
 To install pyrbx from git, run the following:
 ```
