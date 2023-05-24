@@ -11,6 +11,12 @@ from .bases.baseplace import BasePlace
 from .bases.baseuniverse import BaseUniverse
 
 class PublishResponse:
+    """
+    A Publish Response
+    
+    Attributes:
+        version_number (int): Version number received from the Roblox API
+    """
     def __init__(self, data: dict) -> None:
         self.version_number = data['versionNumber']
 
@@ -65,6 +71,14 @@ class Place(BasePlace):
         return f"<{self.__class__.__name__} id={self.id} name={self.name!r}>"
 
     async def publish(self, file: str):
+        """Publish to this place with the specified file
+
+        Args:
+            file (str): path to the file
+
+        Returns:
+            PublishResponse: A Publish Response
+        """
         publish_response = await self._client.requests.post(
             url=self._client.url_generator.get_url("apis", f"universes/v1/{self.universe.id}/places/{self.id}/versions"),
             params={
