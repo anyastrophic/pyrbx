@@ -1171,6 +1171,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#roblox.places.Place.publish" class="md-nav__link">
+    publish()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.places.PublishResponse" class="md-nav__link">
+    PublishResponse
+  </a>
+  
+    <nav class="md-nav" aria-label="PublishResponse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roblox.places.PublishResponse.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1556,6 +1583,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#roblox.places.Place.publish" class="md-nav__link">
+    publish()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.places.PublishResponse" class="md-nav__link">
+    PublishResponse
+  </a>
+  
+    <nav class="md-nav" aria-label="PublishResponse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#roblox.places.PublishResponse.__init__" class="md-nav__link">
+    __init__()
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1751,6 +1805,19 @@ Place            (<a class="autorefs autorefs-internal" title="roblox.bases.base
 
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&gt;&quot;</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">publish_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;universes/v1/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/places/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/versions&quot;</span><span class="p">),</span>
+            <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;versionType&quot;</span><span class="p">:</span> <span class="s1">&#39;Published&#39;</span>
+            <span class="p">},</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="p">)</span>
+
+        <span class="n">publish_data</span> <span class="o">=</span> <span class="n">publish_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">PublishResponse</span><span class="p">(</span><span class="n">publish_data</span><span class="p">)</span>
 </code></pre></div>
         </details>
 
@@ -1863,6 +1930,117 @@ Place            (<a class="autorefs autorefs-internal" title="roblox.bases.base
           <summary>Source code in <code>roblox/places.py</code></summary>
           <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> id=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> name=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">!r}</span><span class="s2">&gt;&quot;</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="roblox.places.Place.publish" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-async"><code>async</code></small>
+  </span>
+
+<a href="#roblox.places.Place.publish" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>roblox/places.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">publish</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">publish_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;universes/v1/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/places/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/versions&quot;</span><span class="p">),</span>
+        <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+            <span class="s2">&quot;versionType&quot;</span><span class="p">:</span> <span class="s1">&#39;Published&#39;</span>
+        <span class="p">},</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="p">)</span>
+
+    <span class="n">publish_data</span> <span class="o">=</span> <span class="n">publish_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">PublishResponse</span><span class="p">(</span><span class="n">publish_data</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-class">
+
+
+
+<h3 id="roblox.places.PublishResponse" class="doc doc-heading">
+        <code>
+PublishResponse        </code>
+
+
+
+<a href="#roblox.places.PublishResponse" class="headerlink" title="Permanent link">&para;</a></h3>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>roblox/places.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">PublishResponse</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">version_number</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;versionNumber&#39;</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="roblox.places.PublishResponse.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-special"><code>special</code></small>
+  </span>
+
+<a href="#roblox.places.PublishResponse.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>roblox/places.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">version_number</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;versionNumber&#39;</span><span class="p">]</span>
 </code></pre></div>
         </details>
     </div>
