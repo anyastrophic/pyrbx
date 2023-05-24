@@ -4,20 +4,14 @@
 </p>
 <p align="center">
     <a href="https://github.com/anyastrophic/pyrbx">GitHub</a> |
-    <a href="https://discord.gg/UKPaPu4teg">Discord</a> |
-    <a href="https://pypi.org/project/roblox/">PyPI</a> |
-    <a href="https://pyrbx.jmk.gg/">Documentation</a> |
+    <a href="https://pypi.org/project/pyrbx/">PyPI</a> |
+    <a href="https://anyastrophic.github.io/pyrbx/dev/">Documentation</a> |
     <a href="https://github.com/anyastrophic/pyrbx/tree/main/examples">Examples</a> |
     <a href="https://github.com/anyastrophic/pyrbx/blob/main/LICENSE">License</a>
 </p>
 <p align="center">
-    <a href="https://discord.gg/UKPaPu4teg"><img src="https://img.shields.io/discord/761603917490159676?style=flat-square&logo=discord" alt="RoAPI Discord"/></a>
-    <a href="https://pypi.org/project/anyastrophic/"><img src="https://img.shields.io/pypi/v/roblox?style=flat-square" alt="pyrbx PyPI"/></a>
-    <a href="https://pypi.org/project/roblox/"><img src="https://img.shields.io/pypi/dm/roblox?style=flat-square" alt="pyrbx PyPI Downloads"/></a>
-    <a href="https://pypi.org/project/roblox/"><img src="https://img.shields.io/pypi/dm/anyastrophic?style=flat-square" alt="pyrbx PyPI Downloads (Legacy)"/></a>
-    <a href="https://pypi.org/project/anyastrophic/"><img src="https://img.shields.io/pypi/l/roblox?style=flat-square" alt="pyrbx PyPI License"/></a>
-    <a href="https://github.com/anyastrophic/pyrbx"><img src="https://img.shields.io/github/commit-activity/w/rbx-libdev/pyrbx?style=flat-square" alt="pyrbx GitHub Commit Activity"/></a>
-    <a href="https://github.com/anyastrophic/pyrbx"><img src="https://img.shields.io/github/last-commit/rbx-libdev/pyrbx?style=flat-square" alt="pyrbx GitHub Last Commit"/></a>
+    <a href="https://pypi.org/project/pyrbx/"><img src="https://img.shields.io/pypi/v/pyrbx?style=flat-square" alt="pyrbx PyPI"/></a>
+    <a href="https://pypi.org/project/pyrbx/"><img src="https://img.shields.io/pypi/l/pyrbx?style=flat-square" alt="pyrbx PyPI License"/></a>
 </p>
 
 # Overview
