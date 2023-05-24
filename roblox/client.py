@@ -48,10 +48,11 @@ class Client:
         account: The account provider object.
     """
 
-    def __init__(self, token: str = None, base_url: str = "roblox.com"):
+    def __init__(self, token: str = None, api_key: str = None, base_url: str = "roblox.com"):
         """
         Arguments:
             token: A .ROBLOSECURITY token to authenticate the client with.
+            api_key: An API key to authenticate Cloud API requests.
             base_url: The base URL to use when sending requests.
         """
         self._url_generator: URLGenerator = URLGenerator(base_url=base_url)
@@ -68,6 +69,9 @@ class Client:
 
         if token:
             self.set_token(token)
+            
+        if api_key:
+            self.set_api_key(api_key)
 
     def __repr__(self):
         return f"<{self.__class__.__name__}>"
@@ -83,6 +87,17 @@ class Client:
 
         """
         self._requests.session.cookies[".ROBLOSECURITY"] = token
+        
+    def set_api_key(self, api_key: Optional[str] = None) -> None:
+        """
+        Authenticates Cloud API requests with the passed key.
+        This method does not send any requests and will not throw if the key is invalid.
+
+        Arguments:
+            api_key: An API key to authenticate Cloud API requests.
+
+        """
+        self._requests.session.headers["x-api-key"] = api_key
 
     # Users
     async def get_user(self, user_id: int) -> User:
@@ -120,14 +135,14 @@ class Client:
             The authenticated user.
         """
         authenticated_user_response = await self._requests.get(
-            url=self._url_generator.get_url("users", f"v1/users/authenticated")
+            url=self._url_generator.get_url("users", "v1/users/authenticated")
         )
         authenticated_user_data = authenticated_user_response.json()
 
         if expand:
             return await self.get_user(authenticated_user_data["id"])
-        else:
-            return PartialUser(client=self, data=authenticated_user_data)
+
+        return PartialUser(client=self, data=authenticated_user_data)
 
     async def get_users(
             self,
@@ -147,18 +162,18 @@ class Client:
             A List of Users or partial users.
         """
         users_response = await self._requests.post(
-            url=self._url_generator.get_url("users", f"v1/users"),
+            url=self._url_generator.get_url("users", "v1/users"),
             json={"userIds": user_ids, "excludeBannedUsers": exclude_banned_users},
         )
         users_data = users_response.json()["data"]
 
         if expand:
             return [await self.get_user(user_data["id"]) for user_data in users_data]
-        else:
-            return [
-                PartialUser(client=self, data=user_data)
-                for user_data in users_data
-            ]
+        
+        return [
+            PartialUser(client=self, data=user_data)
+            for user_data in users_data
+        ]
 
     async def get_users_by_usernames(
             self,
@@ -178,7 +193,7 @@ class Client:
             A list of User or RequestedUsernamePartialUser, depending on the expand argument.
         """
         users_response = await self._requests.post(
-            url=self._url_generator.get_url("users", f"v1/usernames/users"),
+            url=self._url_generator.get_url("users", "v1/usernames/users"),
             json={"usernames": usernames, "excludeBannedUsers": exclude_banned_users},
         )
         users_data = users_response.json()["data"]

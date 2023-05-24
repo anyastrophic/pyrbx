@@ -87,36 +87,20 @@ class GameInstance(BaseJob):
                          through the Roblox mobile app.
     """
 
-    def __init__(self, client: Client, data: dict):
+    def __init__(self, client: Client, data: dict, place_id: int):
         self._client: Client = client
-        self.id: str = data["Guid"]
+        self.id: str = data["id"]
 
         super().__init__(client=self._client, job_id=self.id)
 
-        self.capacity: int = data["Capacity"]
-        self.ping: int = data["Ping"]
-        self.fps: float = data["Fps"]
-        self.show_slow_game_message: bool = data["ShowSlowGameMessage"]
-        self.place: BasePlace = BasePlace(client=self._client, place_id=data["PlaceId"])
-
-        self.current_players: List[GameInstancePlayer] = [
-            GameInstancePlayer(
-                client=self._client,
-                data=player_data
-            ) for player_data in data["CurrentPlayers"]
-        ]
-
-        self.can_join: bool = data["UserCanJoin"]
-        self.show_shutdown_button: bool = data["ShowShutdownButton"]
-        self.friends_description: str = data["FriendsDescription"]
-        self.friends_mouseover = data["FriendsMouseover"]
-        self.capacity_message: str = data["PlayersCapacity"]  # TODO: reconsider
-
-        self.join_script: str = data["JoinScript"]
-        self.app_join_script: str = data["RobloxAppJoinScript"]
+        self.max_players: int = data["maxPlayers"]
+        self.playing: int = data["playing"]
+        self.ping: int = data["ping"]
+        self.fps: float = data["fps"]
+        self.place: BasePlace = BasePlace(client=self._client, place_id=place_id)
 
     def __repr__(self):
-        return f"<{self.__class__.__name__} id={self.id!r} capacity{self.capacity}>"
+        return f"<{self.__class__.__name__} id={self.id!r} capacity{self.max_players}>"
 
 
 class GameInstances:
@@ -131,16 +115,14 @@ class GameInstances:
         total_collection_size: How many active servers there are.
     """
 
-    def __init__(self, client: Client, data: dict):
+    def __init__(self, client: Client, data: dict, place_id: int):
         self._client: Client = client
 
-        self.place: BasePlace = BasePlace(client=self._client, place_id=data["PlaceId"])
-        self.show_shutdown_all_button: bool = data["ShowShutdownAllButton"]
-        self.is_game_instance_list_unavailable: bool = data["IsGameInstanceListUnavailable"]
+        self.place: BasePlace = BasePlace(client=self._client, place_id=place_id)
         self.collection: List[GameInstance] = [
             GameInstance(
                 client=self._client,
-                data=instance_data
-            ) for instance_data in data["Collection"]
+                data=instance_data,
+                place_id=place_id
+            ) for instance_data in data["data"]
         ]
-        self.total_collection_size: int = data["TotalCollectionSize"]

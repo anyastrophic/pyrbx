@@ -6,7 +6,10 @@ It also contains the UniverseLiveStats object, which represents a universe's liv
 """
 
 from __future__ import annotations
-from typing import TYPE_CHECKING, Dict, List
+from typing import TYPE_CHECKING, Dict, List, Union
+
+from datetime import datetime
+from dateutil.parser import parse
 
 from .baseitem import BaseItem
 from ..gamepasses import GamePass
@@ -39,6 +42,42 @@ def _universe_badges_handler(client: Client, data: dict) -> Badge:
     # inline imports are used here, sorry
     from ..badges import Badge
     return Badge(client=client, data=data)
+
+class Datastore:
+    """
+    Represents a datastore for a Universe.
+
+    Attributes:
+        created: When this datastore was made
+        name: The name of this datastore
+    """
+
+    def __init__(self, client: Client, data: dict, universe: Union[BaseUniverse, int]):
+        self._client: Client = client
+        self.name: str = data["name"]
+        self.created: datetime = parse(data["createdTime"])
+        if isinstance(universe, int):
+            self.universe = BaseUniverse(client=self._client, universe_id=universe)
+        else:
+            self.universe = universe
+
+    async def set_entry(self, entry_key: str, entry_value: any):
+        """Sets an entry in the datastore
+
+        Args:
+            entry_key (str): The key for the entry
+            entry_value (any): The value for the entry
+
+        Returns:
+            any: Currently returns JSON, Object coming soon
+        """
+        entry_response = await self._client.requests.post(
+            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.universe.id}/standard-datastores/datastore/entries/entry?datastoreName={self.name}&entryKey={entry_key}"),
+            json=entry_value
+        )
+        entry_data = entry_response.json()
+        # TODO: Make EntryVersion object to respond with
+        return entry_data
 
 
 class BaseUniverse(BaseItem):
@@ -158,3 +197,56 @@ class BaseUniverse(BaseItem):
         )
         links_data = links_response.json()["data"]
         return [SocialLink(client=self._client, data=link_data) for link_data in links_data]
+    
+    async def get_datastores(self) -> List[Datastore]:
+        """Gets datastores of Universe
+
+        Returns:
+            A list of Datastores
+        """
+        
+        datastores_response = await self._client.requests.get(
+            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.id}/standard-datastores")
+        )
+        datastores_data = datastores_response.json()["datastores"]
+        return [Datastore(client=self._client, data=datastore_data, universe=self) for datastore_data in datastores_data]
+    
+    async def get_datastore(self, datastore_name: str) -> Datastore:
+        """Gets datastore by name
+        
+        Arguments:
+            datastore_name: The name of the datastore
+
+        Returns:
+            Datastore: The datastore
+        """
+        
+        datastores_response = await self._client.requests.get(
+            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.id}/standard-datastores?limit=10")
+        )
+        datastores_data = datastores_response.json()["datastores"]
+        
+        for datastore in datastores_data:
+            if datastore["name"] == datastore_name:
+                return Datastore(
+                    client=self._client,
+                    data=datastore,
+                    universe=self
+                )
+    
+    async def publish_message(self, topic: str, message: str) -> int:
+        """Publishes a message using the Cloud API.
+
+        Args:
+            topic (str): Topic
+            message (str): Message
+
+        Returns:
+            int: Status code
+        """
+
+        publish_response = await self._client.requests.post(
+            url=self._client.url_generator.get_url("apis", f"messaging-service/v1/universes/{self.id}/topics/{topic}"),
+            json={"message": message}
+        )
+        return publish_response.status_code

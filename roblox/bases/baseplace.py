@@ -46,7 +46,7 @@ class BasePlace(BaseAsset):
         from ..jobs import GameInstances
 
         instances_response = await self._client.requests.get(
-            url=self._client.url_generator.get_url("www", f"games/getgameinstancesjson"),
+            url=self._client.url_generator.get_url("games", f"v1/games/{self.id}/servers/Public?sortOrder=Asc&limit=100"),
             params={
                 "placeId": self.id,
                 "startIndex": start_index
@@ -55,5 +55,6 @@ class BasePlace(BaseAsset):
         instances_data = instances_response.json()
         return GameInstances(
             client=self._client,
-            data=instances_data
+            data=instances_data,
+            place_id=self.id
         )
