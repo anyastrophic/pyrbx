@@ -42,7 +42,7 @@ def _universe_badges_handler(client: Client, data: dict) -> Badge:
     from ..badges import Badge # pylint: disable=import-outside-toplevel
     return Badge(client=client, data=data)
 
-class Datastore:
+class StandardDatastore: # TODO: Create basedatastore.py, datastores.py and rearrange this code accordingly
     """
     Represents a datastore for a Universe.
 
@@ -76,6 +76,22 @@ class Datastore:
         )
         entry_data = entry_response.json()
         # TODO: Make EntryVersion object to respond with
+        return entry_data
+    
+    async def get_entry(self, entry_key: str):
+        """Gets an entry from the datastore
+
+        Args:
+            entry_key (str): The key for the entry
+
+        Returns:
+            any: Currently returns JSON, Object coming soon
+        """
+        entry_response = await self._client.requests.get(
+            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.universe.id}/standard-datastores/datastore/entries/entry?datastoreName={self.name}&entryKey={entry_key}"),
+        )
+        entry_data = entry_response.json()
+        
         return entry_data
 
 
@@ -197,37 +213,37 @@ class BaseUniverse(BaseItem):
         links_data = links_response.json()["data"]
         return [SocialLink(client=self._client, data=link_data) for link_data in links_data]
     
-    async def get_datastores(self) -> List[Datastore]:
+    async def get_standard_datastores(self) -> List[StandardDatastore]:
         """Gets datastores of Universe
 
         Returns:
-            A list of Datastores
+            A list of StandardDatastores
         """
         
         datastores_response = await self._client.requests.get(
             url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.id}/standard-datastores")
         )
         datastores_data = datastores_response.json()["datastores"]
-        return [Datastore(client=self._client, data=datastore_data, universe=self) for datastore_data in datastores_data]
+        return [StandardDatastore(client=self._client, data=datastore_data, universe=self) for datastore_data in datastores_data]
     
-    async def get_datastore(self, datastore_name: str) -> Datastore:
+    async def get_standard_datastore(self, datastore_name: str) -> StandardDatastore:
         """Gets datastore by name
         
         Arguments:
             datastore_name: The name of the datastore
 
         Returns:
-            Datastore: The datastore
+            StandardDatastore: The datastore
         """
         
         datastores_response = await self._client.requests.get(
-            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.id}/standard-datastores?limit=10")
+            url=self._client.url_generator.get_url("apis", f"datastores/v1/universes/{self.id}/standard-datastores?limit=100")
         )
         datastores_data = datastores_response.json()["datastores"]
         
         for datastore in datastores_data:
             if datastore["name"] == datastore_name:
-                return Datastore(
+                return StandardDatastore(
                     client=self._client,
                     data=datastore,
                     universe=self
