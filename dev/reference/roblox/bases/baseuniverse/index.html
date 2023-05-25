@@ -868,20 +868,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastore" class="md-nav__link">
-    get_datastore()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastores" class="md-nav__link">
-    get_datastores()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#roblox.bases.baseuniverse.BaseUniverse.get_favorite_count" class="md-nav__link">
     get_favorite_count()
   </a>
@@ -910,6 +896,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastore" class="md-nav__link">
+    get_standard_datastore()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastores" class="md-nav__link">
+    get_standard_datastores()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#roblox.bases.baseuniverse.BaseUniverse.is_favorited" class="md-nav__link">
     is_favorited()
   </a>
@@ -929,22 +929,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore" class="md-nav__link">
-    Datastore
+  <a href="#roblox.bases.baseuniverse.StandardDatastore" class="md-nav__link">
+    StandardDatastore
   </a>
   
-    <nav class="md-nav" aria-label="Datastore">
+    <nav class="md-nav" aria-label="StandardDatastore">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore.__init__" class="md-nav__link">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.__init__" class="md-nav__link">
     __init__()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore.set_entry" class="md-nav__link">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.get_entry" class="md-nav__link">
+    get_entry()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.set_entry" class="md-nav__link">
     set_entry()
   </a>
   
@@ -1662,20 +1669,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastore" class="md-nav__link">
-    get_datastore()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastores" class="md-nav__link">
-    get_datastores()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#roblox.bases.baseuniverse.BaseUniverse.get_favorite_count" class="md-nav__link">
     get_favorite_count()
   </a>
@@ -1704,6 +1697,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastore" class="md-nav__link">
+    get_standard_datastore()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastores" class="md-nav__link">
+    get_standard_datastores()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#roblox.bases.baseuniverse.BaseUniverse.is_favorited" class="md-nav__link">
     is_favorited()
   </a>
@@ -1723,22 +1730,29 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore" class="md-nav__link">
-    Datastore
+  <a href="#roblox.bases.baseuniverse.StandardDatastore" class="md-nav__link">
+    StandardDatastore
   </a>
   
-    <nav class="md-nav" aria-label="Datastore">
+    <nav class="md-nav" aria-label="StandardDatastore">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore.__init__" class="md-nav__link">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.__init__" class="md-nav__link">
     __init__()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#roblox.bases.baseuniverse.Datastore.set_entry" class="md-nav__link">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.get_entry" class="md-nav__link">
+    get_entry()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#roblox.bases.baseuniverse.StandardDatastore.set_entry" class="md-nav__link">
     set_entry()
   </a>
   
@@ -1969,37 +1983,37 @@ BaseUniverse            (<a class="autorefs autorefs-internal" title="roblox.bas
         <span class="n">links_data</span> <span class="o">=</span> <span class="n">links_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">SocialLink</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">link_data</span><span class="p">)</span> <span class="k">for</span> <span class="n">link_data</span> <span class="ow">in</span> <span class="n">links_data</span><span class="p">]</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Datastore</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_standard_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">StandardDatastore</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets datastores of Universe</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            A list of Datastores</span>
+<span class="sd">            A list of StandardDatastores</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
             <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores&quot;</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Datastore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">datastore_data</span><span class="p">,</span> <span class="n">universe</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">datastore_data</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">StandardDatastore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">datastore_data</span><span class="p">,</span> <span class="n">universe</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">datastore_data</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">]</span>
 
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Datastore</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_standard_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StandardDatastore</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets datastore by name</span>
 
 <span class="sd">        Arguments:</span>
 <span class="sd">            datastore_name: The name of the datastore</span>
 
 <span class="sd">        Returns:</span>
-<span class="sd">            Datastore: The datastore</span>
+<span class="sd">            StandardDatastore: The datastore</span>
 <span class="sd">        &quot;&quot;&quot;</span>
 
         <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-            <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores?limit=10&quot;</span><span class="p">)</span>
+            <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores?limit=100&quot;</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
 
         <span class="k">for</span> <span class="n">datastore</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">datastore</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">datastore_name</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">Datastore</span><span class="p">(</span>
+                <span class="k">return</span> <span class="n">StandardDatastore</span><span class="p">(</span>
                     <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span>
                     <span class="n">data</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span>
                     <span class="n">universe</span><span class="o">=</span><span class="bp">self</span>
@@ -2180,143 +2194,6 @@ BaseUniverse            (<a class="autorefs autorefs-internal" title="roblox.bas
         <span class="n">max_items</span><span class="o">=</span><span class="n">max_items</span><span class="p">,</span>
         <span class="n">handler</span><span class="o">=</span><span class="n">_universe_badges_handler</span><span class="p">,</span>
     <span class="p">)</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="roblox.bases.baseuniverse.BaseUniverse.get_datastore" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Datastore</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-async"><code>async</code></small>
-  </span>
-
-<a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastore" class="headerlink" title="Permanent link">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Gets datastore by name</p>
-
-<p><strong>Parameters:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-      <th>Default</th>
-    </tr>
-  </thead>
-  <tbody>
-      <tr>
-        <td><code>datastore_name</code></td>
-        <td><code>str</code></td>
-        <td><p>The name of the datastore</p></td>
-        <td><em>required</em></td>
-      </tr>
-  </tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>Datastore</code></td>
-      <td><p>The datastore</p></td>
-    </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Datastore</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets datastore by name</span>
-
-<span class="sd">    Arguments:</span>
-<span class="sd">        datastore_name: The name of the datastore</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        Datastore: The datastore</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores?limit=10&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
-
-    <span class="k">for</span> <span class="n">datastore</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">datastore</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">datastore_name</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">Datastore</span><span class="p">(</span>
-                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span>
-                <span class="n">data</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span>
-                <span class="n">universe</span><span class="o">=</span><span class="bp">self</span>
-            <span class="p">)</span>
-</code></pre></div>
-        </details>
-    </div>
-
-  </div>
-
-
-
-  <div class="doc doc-object doc-method">
-
-
-
-<h4 id="roblox.bases.baseuniverse.BaseUniverse.get_datastores" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">get_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Datastore</span><span class="p">]</span></code>
-
-  <span class="doc doc-properties">
-      <small class="doc doc-property doc-property-async"><code>async</code></small>
-  </span>
-
-<a href="#roblox.bases.baseuniverse.BaseUniverse.get_datastores" class="headerlink" title="Permanent link">&para;</a></h4>
-
-    <div class="doc doc-contents ">
-
-      <p>Gets datastores of Universe</p>
-
-<p><strong>Returns:</strong></p>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>List[Datastore]</code></td>
-      <td><p>A list of Datastores</p></td>
-    </tr>
-  </tbody>
-</table>
-        <details class="quote">
-          <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Datastore</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets datastores of Universe</span>
-
-<span class="sd">    Returns:</span>
-<span class="sd">        A list of Datastores</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
-        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores&quot;</span><span class="p">)</span>
-    <span class="p">)</span>
-    <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="p">[</span><span class="n">Datastore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">datastore_data</span><span class="p">,</span> <span class="n">universe</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">datastore_data</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">]</span>
 </code></pre></div>
         </details>
     </div>
@@ -2586,6 +2463,143 @@ This data does not update live. These are just the stats that are shown on the w
 
 
 
+<h4 id="roblox.bases.baseuniverse.BaseUniverse.get_standard_datastore" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_standard_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StandardDatastore</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-async"><code>async</code></small>
+  </span>
+
+<a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastore" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets datastore by name</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>datastore_name</code></td>
+        <td><code>str</code></td>
+        <td><p>The name of the datastore</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>StandardDatastore</code></td>
+      <td><p>The datastore</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_standard_datastore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datastore_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">StandardDatastore</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets datastore by name</span>
+
+<span class="sd">    Arguments:</span>
+<span class="sd">        datastore_name: The name of the datastore</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        StandardDatastore: The datastore</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores?limit=100&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">datastore</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">datastore</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">datastore_name</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">StandardDatastore</span><span class="p">(</span>
+                <span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">datastore</span><span class="p">,</span>
+                <span class="n">universe</span><span class="o">=</span><span class="bp">self</span>
+            <span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="roblox.bases.baseuniverse.BaseUniverse.get_standard_datastores" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_standard_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">StandardDatastore</span><span class="p">]</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-async"><code>async</code></small>
+  </span>
+
+<a href="#roblox.bases.baseuniverse.BaseUniverse.get_standard_datastores" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets datastores of Universe</p>
+
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>List[StandardDatastore]</code></td>
+      <td><p>A list of StandardDatastores</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_standard_datastores</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">StandardDatastore</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets datastores of Universe</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of StandardDatastores</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">datastores_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">datastores_data</span> <span class="o">=</span> <span class="n">datastores_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s2">&quot;datastores&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">StandardDatastore</span><span class="p">(</span><span class="n">client</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">datastore_data</span><span class="p">,</span> <span class="n">universe</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span> <span class="k">for</span> <span class="n">datastore_data</span> <span class="ow">in</span> <span class="n">datastores_data</span><span class="p">]</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
 <h4 id="roblox.bases.baseuniverse.BaseUniverse.is_favorited" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">is_favorited</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span></code>
 
@@ -2733,13 +2747,13 @@ This data does not update live. These are just the stats that are shown on the w
 
 
 
-<h3 id="roblox.bases.baseuniverse.Datastore" class="doc doc-heading">
+<h3 id="roblox.bases.baseuniverse.StandardDatastore" class="doc doc-heading">
         <code>
-Datastore        </code>
+StandardDatastore        </code>
 
 
 
-<a href="#roblox.bases.baseuniverse.Datastore" class="headerlink" title="Permanent link">&para;</a></h3>
+<a href="#roblox.bases.baseuniverse.StandardDatastore" class="headerlink" title="Permanent link">&para;</a></h3>
 
     <div class="doc doc-contents ">
 
@@ -2769,7 +2783,7 @@ Datastore        </code>
 </table>
         <details class="quote">
           <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
-          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Datastore</span><span class="p">:</span>
+          <div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">StandardDatastore</span><span class="p">:</span> <span class="c1"># TODO: Create basedatastore.py, datastores.py and rearrange this code accordingly</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Represents a datastore for a Universe.</span>
 
@@ -2804,6 +2818,22 @@ Datastore        </code>
         <span class="n">entry_data</span> <span class="o">=</span> <span class="n">entry_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
         <span class="c1"># TODO: Make EntryVersion object to respond with</span>
         <span class="k">return</span> <span class="n">entry_data</span>
+
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets an entry from the datastore</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            entry_key (str): The key for the entry</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            any: Currently returns JSON, Object coming soon</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">entry_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores/datastore/entries/entry?datastoreName=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&amp;entryKey=</span><span class="si">{</span><span class="n">entry_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">entry_data</span> <span class="o">=</span> <span class="n">entry_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">entry_data</span>
 </code></pre></div>
         </details>
 
@@ -2823,14 +2853,14 @@ Datastore        </code>
 
 
 
-<h4 id="roblox.bases.baseuniverse.Datastore.__init__" class="doc doc-heading">
+<h4 id="roblox.bases.baseuniverse.StandardDatastore.__init__" class="doc doc-heading">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client</span><span class="p">:</span> <span class="n">Client</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">universe</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BaseUniverse</span><span class="p">,</span> <span class="nb">int</span><span class="p">])</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-special"><code>special</code></small>
   </span>
 
-<a href="#roblox.bases.baseuniverse.Datastore.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
+<a href="#roblox.bases.baseuniverse.StandardDatastore.__init__" class="headerlink" title="Permanent link">&para;</a></h4>
 
     <div class="doc doc-contents ">
 
@@ -2857,14 +2887,90 @@ Datastore        </code>
 
 
 
-<h4 id="roblox.bases.baseuniverse.Datastore.set_entry" class="doc doc-heading">
+<h4 id="roblox.bases.baseuniverse.StandardDatastore.get_entry" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-async"><code>async</code></small>
+  </span>
+
+<a href="#roblox.bases.baseuniverse.StandardDatastore.get_entry" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets an entry from the datastore</p>
+
+<p><strong>Parameters:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td><code>entry_key</code></td>
+        <td><code>str</code></td>
+        <td><p>The key for the entry</p></td>
+        <td><em>required</em></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>any</code></td>
+      <td><p>Currently returns JSON, Object coming soon</p></td>
+    </tr>
+  </tbody>
+</table>
+        <details class="quote">
+          <summary>Source code in <code>roblox/bases/baseuniverse.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets an entry from the datastore</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        entry_key (str): The key for the entry</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        any: Currently returns JSON, Object coming soon</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">entry_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;apis&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;datastores/v1/universes/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">universe</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/standard-datastores/datastore/entries/entry?datastoreName=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&amp;entryKey=</span><span class="si">{</span><span class="n">entry_key</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+    <span class="p">)</span>
+    <span class="n">entry_data</span> <span class="o">=</span> <span class="n">entry_response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">entry_data</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="roblox.bases.baseuniverse.StandardDatastore.set_entry" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">set_entry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entry_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">entry_value</span><span class="p">:</span> <span class="nb">any</span><span class="p">)</span></code>
 
   <span class="doc doc-properties">
       <small class="doc doc-property doc-property-async"><code>async</code></small>
   </span>
 
-<a href="#roblox.bases.baseuniverse.Datastore.set_entry" class="headerlink" title="Permanent link">&para;</a></h4>
+<a href="#roblox.bases.baseuniverse.StandardDatastore.set_entry" class="headerlink" title="Permanent link">&para;</a></h4>
 
     <div class="doc doc-contents ">
 
