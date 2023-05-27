@@ -39,17 +39,21 @@ class MemberRelationship(BaseUser):
             self.group = group
             
     async def get_role(self) -> Role:
-        """Gets this member's role
-        """
+        """Gets this member's role"""
         
         roles_response = await self._client.requests.get(
             url=self._client.url_generator.get_url("groups", f"v2/users/{self.id}/groups/roles")
         )
         roles_data = roles_response.json()['data']
         
+        role = None
+        
         for item in roles_data:
             if item["group"]["id"] == self.group.id:
-                return Role(self._client, item["role"], self.group)
+                role = Role(self._client, item["role"], self.group)
+                break
+                
+        return role
 
     async def set_role(self, role: RoleOrRoleId):
         """

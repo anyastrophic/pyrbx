@@ -37,6 +37,7 @@ class Role(BaseRole):
             data: The raw role data.
             group: The parent group.
         """
+        
         self._client: Client = client
 
         self.id: int = data["id"]
