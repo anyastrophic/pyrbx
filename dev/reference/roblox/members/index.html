@@ -1068,6 +1068,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#roblox.members.MemberRelationship.get_role" class="md-nav__link">
+    get_role()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#roblox.members.MemberRelationship.kick" class="md-nav__link">
     kick()
   </a>
@@ -1632,6 +1639,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#roblox.members.MemberRelationship.get_role" class="md-nav__link">
+    get_role()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#roblox.members.MemberRelationship.kick" class="md-nav__link">
     kick()
   </a>
@@ -1937,6 +1951,19 @@ MemberRelationship            (<a class="autorefs autorefs-internal" title="robl
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">group</span> <span class="o">=</span> <span class="n">group</span>
 
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_role</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Role</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Gets this member&#39;s role</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">roles_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;groups&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;v2/users/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/groups/roles&quot;</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">roles_data</span> <span class="o">=</span> <span class="n">roles_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">roles_data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="p">)</span>
+
     <span class="k">async</span> <span class="k">def</span> <span class="nf">set_role</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">role</span><span class="p">:</span> <span class="n">RoleOrRoleId</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Sets this member&#39;s role.</span>
@@ -2041,6 +2068,45 @@ MemberRelationship            (<a class="autorefs autorefs-internal" title="robl
 <span class="sd">    Deletes all wall posts created by this member in the group.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">delete_all_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</code></pre></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-method">
+
+
+
+<h4 id="roblox.members.MemberRelationship.get_role" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">get_role</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Role</span></code>
+
+  <span class="doc doc-properties">
+      <small class="doc doc-property doc-property-async"><code>async</code></small>
+  </span>
+
+<a href="#roblox.members.MemberRelationship.get_role" class="headerlink" title="Permanent link">&para;</a></h4>
+
+    <div class="doc doc-contents ">
+
+      <p>Gets this member's role</p>
+
+        <details class="quote">
+          <summary>Source code in <code>roblox/members.py</code></summary>
+          <div class="highlight"><pre><span></span><code><span class="k">async</span> <span class="k">def</span> <span class="nf">get_role</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Role</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets this member&#39;s role</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">roles_response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">url_generator</span><span class="o">.</span><span class="n">get_url</span><span class="p">(</span><span class="s2">&quot;groups&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;v2/users/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">/groups/roles&quot;</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">roles_data</span> <span class="o">=</span> <span class="n">roles_response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">roles_data</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="p">)</span>
 </code></pre></div>
         </details>
     </div>
