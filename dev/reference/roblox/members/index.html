@@ -1962,12 +1962,9 @@ MemberRelationship            (<a class="autorefs autorefs-internal" title="robl
         <span class="n">role</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">roles_data</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
                 <span class="n">role</span> <span class="o">=</span> <span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="p">)</span>
                 <span class="k">break</span>
-
-        <span class="nb">print</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">role</span>
 
@@ -2113,12 +2110,9 @@ MemberRelationship            (<a class="autorefs autorefs-internal" title="robl
     <span class="n">role</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">roles_data</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="o">.</span><span class="n">id</span><span class="p">:</span>
             <span class="n">role</span> <span class="o">=</span> <span class="n">Role</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="p">,</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">group</span><span class="p">)</span>
             <span class="k">break</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">role</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">role</span>
 </code></pre></div>
