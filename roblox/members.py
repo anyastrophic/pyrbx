@@ -11,6 +11,8 @@ from typing import Union, TYPE_CHECKING
 from .bases.baseuser import BaseUser
 from .partials.partialrole import PartialRole
 
+from .roles import Role
+
 if TYPE_CHECKING:
     from .client import Client
     from .bases.basegroup import BaseGroup
@@ -35,6 +37,19 @@ class MemberRelationship(BaseUser):
             self.group = BaseGroup(client=self._client, group_id=group)
         else:
             self.group = group
+            
+    async def get_role(self) -> Role:
+        """Gets this member's role
+        """
+        
+        roles_response = await self._client.requests.get(
+            url=self._client.url_generator.get_url("groups", f"v2/users/{self.id}/groups/roles")
+        )
+        roles_data = roles_response.json()['data']
+        
+        for item in roles_data:
+            if item["group"]["id"] == self.group.id:
+                return Role(self._client, item["role"], self.group)
 
     async def set_role(self, role: RoleOrRoleId):
         """
