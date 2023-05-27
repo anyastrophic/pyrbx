@@ -49,6 +49,7 @@ class MemberRelationship(BaseUser):
         role = None
         
         for item in roles_data:
+            print(item)
             if item["group"]["id"] == self.group.id:
                 role = Role(self._client, item["role"], self.group)
                 break
